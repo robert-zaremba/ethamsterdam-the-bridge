@@ -1,19 +1,38 @@
-# Regen Ledger
-
-![banner](docs/.vuepress/public/regen-ledger.png)
+# The Bridge Message Standard using Regen Ledger
 
 [![Build status](https://github.com/regen-network/regen-ledger/workflows/Build/badge.svg)](https://github.com/regen-network/regen-ledger/commits/master)
 [![Tests status](https://github.com/regen-network/regen-ledger/workflows/Tests/badge.svg)](https://github.com/regen-network/regen-ledger/commits/master)
-![GitHub issues](https://img.shields.io/github/issues/regen-network/regen-ledger.svg)
-[![GitHub issues by-label](https://img.shields.io/github/issues/regen-network/regen-ledger/good%20first%20issue.svg)](https://github.com/regen-network/regen-ledger/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
-[![codecov](https://codecov.io/gh/regen-network/regen-ledger/branch/master/graph/badge.svg)](https://codecov.io/gh/regen-network/regen-ledger)
-[![GoDoc](https://godoc.org/github.com/regen-network/regen-ledger?status.svg)](http://godoc.org/github.com/regen-network/regen-ledger)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Go Report Card](https://goreportcard.com/badge/github.com/regen-network/regen-ledger)](https://goreportcard.com/report/github.com/regen-network/regen-ledger)
-[![Gitter chat](https://badges.gitter.im/regen-network/regen-ledger.png)](https://gitter.im/regen-network/regen-ledger "Gitter chat")
 
-A distributed ledger for ecology built on top of the
-[cosmos-sdk](http://github.com/cosmos/cosmos-sdk).
+
+This repository provides a submission for the [EthAmsterdam 2022 Hackathon](https://hack.ethglobal.com/ethamsterdam).
+
+
+## Hackathon Submission Summary
+
+We propose a bridge message standard to be applied across different bridges and chains. For a proof of concept we:
++ bridge Toucan protocol (deployed on Polygon) TCO2 tokens with Regen Eco Credits
++ using a bridge controller smart contract to connect with a Axelar bridge service connecting Polygon and Regen Ledger
++ Regen Ledger as a Cosmos SDK with it's own token registry. 
+
+Code:
++ https://github.com/regen-network/toucan-the-bridge: Bridge controller implementing The Bridge Message Standard
++ https://github.com/robert-zaremba/ethamsterdam-the-bridge: fork of Regen Ledger (Cosmos SDK chain) with:
+    + [`x/axelarbridge`](https://github.com/robert-zaremba/ethamsterdam-the-bridge/tree/master/x/axelarbridge) module implementing the The Bridge Message Standard.
+    + [`x/ecocredits handler`](https://github.com/robert-zaremba/ethamsterdam-the-bridge/blob/master/x/ecocredit/core/bridge.go) with custom logic handling the message to process TCO2 token registration.
+ 
+   regen-ledger code diff: https://github.com/robert-zaremba/ethamsterdam-the-bridge/compare/regen-master...master
+ 
+The solution can be also applied to any smart contract chain or Layer-2 (Evmos, Optimism, Juno, Agoric, Solana ....).
+
+### Presentation
+
+Please see look at the description of our work at the [EthAmsterdam: The Bridge Message Standard](https://hackmd.io/IZ0ta7_UQ1GUYl4WI__aKQ?view).
+
+
+### Rest of the document
+
+The rest of the document provides Regen Ledger information from it's [upstream](https://github.com/regen-network/regen-ledger) repository.
+
 
 ## Getting Started
 
